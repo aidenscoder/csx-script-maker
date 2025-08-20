@@ -6,6 +6,8 @@ Templated-Structure:
 (Proj-name)-
     (.vscode)-
         settings.json
-    
-    main.csx
+    (src)-
+        main.csx
+
+    README.md
 ```
