@@ -1,2 +1,0 @@
-set dotnet-script=
-cls
