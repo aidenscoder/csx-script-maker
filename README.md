@@ -12,5 +12,5 @@ Templated-Structure:
     (src)-
         main.csx
     README.md
-    import-update.py
+
 ```
