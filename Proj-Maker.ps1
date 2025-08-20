@@ -25,6 +25,10 @@ function MakeProj {
         New-Item -Path "$directory_name\.vscode" -ItemType Directory
     }
 
+    if (-not (Test-Path "$directory_name\modules")){
+        New-Item -Path "$directory_name\modules" -ItemType Directory
+    }
+
     if (-not (Test-Path "$directory_name\.vscode\settings.json")){
         New-Item -Path "$directory_name\.vscode\settings.json" -ItemType File
     }
@@ -48,10 +52,29 @@ function MakeProj {
     )
 
     if (-not (Test-Path "$directory_name\import-update.py")){
-        New-Item -Path "$directory_name\import-update.py"
+        New-Item -Path "$directory_name\import-update.py" -ItemType File
     }
 
     Set-Content "$directory_name\import-update.py" @(
-        
+    "import os",
+    "",
+    "directory = `"imported`"",
+    "files = os.listdir(directory)",
+    "importing_lines = `"`"",
+    "for file in files:",
+    '   importing_lines += f"#load \"{directory+"/"+file}"',
+    "",
+    "with open(`"$directory_name\\src\\main.csx`",`"r`") as file:",
+    "    content = file.read()",
+    "    content = content.split(`"\n`")",
+    "    content[0] = importing_lines",
+    "    join = `"`"",
+    "    for i in content:",
+    "        join += i+`"\n`"",
+    "",
+    "with open(`"main.csx`",`"w`") as file:",
+    "   file.write(join)"
     )
 }
+
+MakeProj("proj")
