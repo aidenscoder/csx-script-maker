@@ -44,6 +44,6 @@ function MakeProj {
     }
 
     Set-Content "$directory_name\README.md" @(
-        "# $directory_name"
+    "# $directory_name"
     )
 }

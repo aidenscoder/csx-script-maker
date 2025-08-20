@@ -8,6 +8,5 @@ Templated-Structure:
         settings.json
     (src)-
         main.csx
-
     README.md
 ```
