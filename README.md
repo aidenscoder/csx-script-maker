@@ -7,9 +7,8 @@ Templated-Structure:
     (.vscode)-
         settings.json
 
-    (modules)-...
-
     (src)-
+        (modules)-...
         main.csx
     README.md
 

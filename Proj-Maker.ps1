@@ -25,8 +25,8 @@ function MakeProj {
         New-Item -Path "$directory_name\.vscode" -ItemType Directory
     }
 
-    if (-not (Test-Path "$directory_name\modules")){
-        New-Item -Path "$directory_name\modules" -ItemType Directory
+    if (-not (Test-Path "$directory_name\src\modules")){
+        New-Item -Path "$directory_name\src\modules" -ItemType Directory
     }
 
     if (-not (Test-Path "$directory_name\.vscode\settings.json")){
