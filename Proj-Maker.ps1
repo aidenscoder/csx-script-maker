@@ -58,11 +58,11 @@ function MakeProj {
     Set-Content "$directory_name\import-update.py" @(
     "import os",
     "",
-    "directory = `"imported`"",
+    "directory = `"$directory_name\\modules`"",
     "files = os.listdir(directory)",
     "importing_lines = `"`"",
     "for file in files:",
-    '   importing_lines += f"#load \"{directory+"/"+file}"',
+    '   importing_lines += f"#load f"#load \"{directory+"/"+file}\"" ',
     "",
     "with open(`"$directory_name\\src\\main.csx`",`"r`") as file:",
     "    content = file.read()",
@@ -72,7 +72,7 @@ function MakeProj {
     "    for i in content:",
     "        join += i+`"\n`"",
     "",
-    "with open(`"main.csx`",`"w`") as file:",
+    "with open(`"$directory_name\\src\\main.csx`",`"w`") as file:",
     "   file.write(join)"
     )
 }

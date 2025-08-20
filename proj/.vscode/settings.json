@@ -1,0 +1,8 @@
+{
+"code-runner.clearPreviousOutput": true,
+"code-runner.runInTerminal": true,
+"code-runner.fileDirectoryAsCwd": true,
+"code-runner.executorMap": {
+   "csharp":"dotnet-script"
+   }
+}
