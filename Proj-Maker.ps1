@@ -46,4 +46,12 @@ function MakeProj {
     Set-Content "$directory_name\README.md" @(
     "# $directory_name"
     )
+
+    if (-not (Test-Path "$directory_name\import-update.py")){
+        New-Item -Path "$directory_name\import-update.py"
+    }
+
+    Set-Content "$directory_name\import-update.py" @(
+        
+    )
 }
